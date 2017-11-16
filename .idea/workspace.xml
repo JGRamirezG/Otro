@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="75061cdc-bd9c-465d-ad4b-47594435aabd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/academico/JP.html.erb" afterPath="$PROJECT_DIR$/app/views/academico/JP.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/academico/MJ.html.erb" afterPath="$PROJECT_DIR$/app/views/academico/MJ.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/academico/editar.html.erb" afterPath="$PROJECT_DIR$/app/views/academico/editar.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/academico/index.html.erb" afterPath="$PROJECT_DIR$/app/views/academico/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/academico/mostrar.html.erb" afterPath="$PROJECT_DIR$/app/views/academico/mostrar.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/academico/new.html.erb" afterPath="$PROJECT_DIR$/app/views/academico/new.html.erb" />
-    </list>
+    <list default="true" id="75061cdc-bd9c-465d-ad4b-47594435aabd" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -24,11 +16,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="academico.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="academico.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/academico.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editar.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/academico/editar.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="151" column="28" lean-forward="true" selection-start-line="151" selection-start-column="28" selection-end-line="151" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/academico/new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="144" column="107" lean-forward="true" selection-start-line="144" selection-start-column="107" selection-end-line="144" selection-end-column="107" />
               <folding />
             </state>
           </provider>
@@ -287,12 +299,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510855817630</updated>
-      <workItem from="1510855819338" duration="2075000" />
+      <workItem from="1510855819338" duration="2715000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2075000" />
+    <option name="totallyTimeSpent" value="2715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -506,22 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/academico/editar.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="92" column="30" lean-forward="true" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/academico/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="85" column="73" lean-forward="false" selection-start-line="85" selection-start-column="73" selection-end-line="85" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/academico_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -534,6 +530,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/academico/editar.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="151" column="28" lean-forward="true" selection-start-line="151" selection-start-column="28" selection-end-line="151" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/academico/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="144" column="107" lean-forward="true" selection-start-line="144" selection-start-column="107" selection-end-line="144" selection-end-column="107" />
           <folding />
         </state>
       </provider>
