@@ -1,7 +1,11 @@
 class AcademicoController < ApplicationController
 
   def index
-    @academicos = Academico.all 
+    if params[:search]
+      @academicos = Academico.where("nombre like ?", "#{params[:search]}%")
+    else
+      @academicos = Academico.all 
+    end
   end
 
   def mostrar
@@ -36,7 +40,7 @@ class AcademicoController < ApplicationController
   end
 
   def user_params
-    params.require(:academico).permit(:nombre,:grado,:area_interes,:correo,:link1,:link2,:link3,:descripcion) #retorna un hash con todos los valores del academico...
+    params.require(:academico).permit(:nombre,:grado,:area_interes,:correo,:jornada,:imagen,:link1,:link2,:link3,:descripcion) #retorna un hash con todos los valores del academico...
   end
 
   def set_academico

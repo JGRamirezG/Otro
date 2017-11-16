@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
   
+  get 'tipo_texto/index'
+
+  get 'tipo_texto/mostrar'
+
+  get 'tipo_texto/editar'
+
+  get 'tipo_texto/new'
+
+  get 'tipo_texto/create'
+
+  get 'tipo_texto/update'
+
   get 'academico/', to: 'academico#index', as:'academico'
 
-  #get 'academico/:id', to: 'academico#mostrar', as:'Encontrar_Academico'
+  get 'academico/mostrar/:id', to: 'academico#mostrar'
 
   get 'academico/:id/editar', to: 'academico#editar', as:'editar_academico'
 

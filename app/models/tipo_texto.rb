@@ -1,0 +1,2 @@
+class TipoTexto < ApplicationRecord
+end

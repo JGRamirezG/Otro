@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115022154) do
+ActiveRecord::Schema.define(version: 20171115160442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,231 @@ ActiveRecord::Schema.define(version: 20171115022154) do
     t.string "link3"
     t.string "descripcion"
     t.string "curriculum"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "jornada"
+    t.string "imagen"
+  end
+
+  create_table "areas_disciplinaria", force: :cascade do |t|
+    t.string "nombre"
+    t.string "descripcion"
+    t.string "descripcion2"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "areas_disciplinarias_academicos", force: :cascade do |t|
+    t.string "cargo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "centro_alumnos", force: :cascade do |t|
+    t.integer "anio"
+    t.string "presidente"
+    t.string "vicepresidente"
+    t.string "otros"
+    t.string "pagweb"
+    t.string "imagen"
+    t.string "programa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacto_deptos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "correo"
+    t.integer "consulta"
+    t.integer "oferta_laboral"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacto_escuelas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "correo"
+    t.integer "consulta"
+    t.integer "oferta"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "egresado_destacados", force: :cascade do |t|
+    t.string "nombre"
+    t.string "programa"
+    t.string "contacto_empresa"
+    t.string "correo"
+    t.string "imagen"
+    t.string "opinion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "egresados", force: :cascade do |t|
+    t.string "nombre"
+    t.string "programa"
+    t.string "contacto_empresa"
+    t.string "correo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "evento_escuelas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "lugar"
+    t.string "descripcion"
+    t.string "imagen"
+    t.date "fecha"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "funcionario_deptos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "cargo"
+    t.string "correo"
+    t.string "imagen"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "funcionario_escuelas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "cargo"
+    t.string "correo"
+    t.string "imagen"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "funcionario_tipo_deptos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "funcionario_tipo_escuelas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "investigacions", force: :cascade do |t|
+    t.string "nombre"
+    t.string "descripcion"
+    t.string "imagen"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mensaje_deptos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "empresa"
+    t.string "cargo"
+    t.string "correo"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mensaje_escuelas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "empresa"
+    t.string "cargo"
+    t.string "correo"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "noticia_escuelas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "cuerpo"
+    t.string "imagen"
+    t.date "fecha"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "oferta", force: :cascade do |t|
+    t.date "fecha"
+    t.string "cargo"
+    t.string "empresa"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pde_escuelas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "descripcion"
+    t.string "imagen"
+    t.string "imagen2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "programas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "perfil_egreso"
+    t.string "campo_ocupacional"
+    t.string "link"
+    t.string "descripcion"
+    t.string "link_malla"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "proyecto_academicos", force: :cascade do |t|
+    t.string "cargo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "proyectos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reglamentos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "textos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "descripcion"
+    t.string "imagen"
+    t.string "descripcion_imagen"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tipo_investigacions", force: :cascade do |t|
+    t.string "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tipo_programas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tipo_textos", force: :cascade do |t|
+    t.string "unidad"
+    t.string "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

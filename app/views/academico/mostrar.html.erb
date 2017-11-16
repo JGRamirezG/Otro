@@ -22,6 +22,9 @@
     .margen{
       margin-top: 2em;
     }
+    .margen3{
+      margin-top: 5em;
+    }
     .margen2{
       margin-top: 18em;
     }
@@ -41,19 +44,16 @@
             <br>
             <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
                 <li class="nav-item" href="/inicio.html">
-                    <a class="nav-link" href="escuela.html" style="color: #ffffff;">Inicio</a>
+                    <a class="nav-link" href="departamento.html" style="color: #ffffff;">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="academicos.html"  style="color: #ffffff;">Académicos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="estudiantes.html"  style="color: #ffffff;">Estudiantes</a>
+                    <a class="nav-link" href="investigacion.html"  style="color: #ffffff;">Investigación</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="egresados.html"  style="color: #ffffff;">Egresados</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="laboral.html"  style="color: #ffffff;">Laboral</a>
+                    <a class="nav-link" href="organizacion.html"  style="color: #ffffff;">Organización</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contacto.html"  style="color: #ffffff;">Contacto</a>
@@ -67,7 +67,7 @@
         <div class="container-fluid">
           <ol class="breadcrumb margen">
             <li class="breadcrumb-item"><a href="index2.html">Portal</a></li>
-            <li class="breadcrumb-item active">Escuela</li>
+            <li class="breadcrumb-item active">Departamento</li>
           </ol>
           <hr>
         </div>
@@ -76,36 +76,52 @@
             <a href="#" class="list-group-item active">
               Jornada Completa
             </a>
-            <a href="academicos/mjornada.html" class="list-group-item list-group-item-action">Media Jornada</a>
-            <a href="academicos/mparcial.html" class="list-group-item list-group-item-action">Jornada Parcial</a>
+            <a href="departamento/mjornada.html" class="list-group-item list-group-item-action">Media Jornada</a>
+            <a href="#" class="list-group-item list-group-item-action">Jornada Parcial</a>
           </div>
         </div>
       </div>
       <div class="col-md-9">
-          <div class="container margen">
-            <hr>
-              <a href="profesor.html"><img class="img-fluid" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png"></a>
-              <br>
-              <br>
-              <h4 class="text-left">Nombre: <%= @academicos.nombre%> </h4>
-              <h4 class="text-left">Ph.D. en ...</h4>
-              <h4 class="text-left">Correo: </h4>
-              <h4 class="text-left">Areas de investigacion: <%=@academicos.descripcion %></h4>
-              <br>
-              <br>
-            <hr>
+        <div class="row">
+          <div class="col-md-2 margen3 col-sm-12">
+            <img width="130" height="130" class="rounded-circle mx-auto d-block" src="<%= @academicos.imagen %>">
           </div>
-      </div>
-      <div class="col-md-3"></div>
-      <div class="col-md-9">
-          <div class="text-right">
-            <center>
-            <a href="">Ver mas</a>
-            </center>
+          <div class="col-md-10 margen col-sm-12">
+            <h3 class="text-left margen">
+              <%= @academicos.nombre %>
+            </h3>
+            <br>
+            <h3><%= @academicos.grado %></h3>
+            <br>
+            <h3 class="text-left">
+              <%= @academicos.area_interes %>.
+            </h3>
+            <br>
+            <h3 class="text-left">
+              <%= @academicos.correo %>
+            </h3>
+            <div class="row">
+              <div class="col-md-1"><img src="https://image.flaticon.com/icons/svg/174/174848.svg" class="img-fluid flot-left" width="40" height="40"></div>
+              <div class="col-md-1"><img src="https://image.flaticon.com/icons/svg/174/174857.svg" class="img-fluid flot-left" width="40" height="40"></div>
+              <div class="col-md-1"><img src="https://image.flaticon.com/icons/svg/174/174876.svg" class="img-fluid flot-left" width="40" height="40"></div>
+            </div>
+            <br>
+            <h3 class="text-left">
+              Horario de atención:
+              <ul>
+              <li>Lunes      18:00 hrs.</li>
+              <li>Martes     15:30 hrs.</li>
+              </ul>
+            </h3>
+            <br>
+            <h3 class="text-left">
+              <a href="cv.pdf">Curriculum Vitae</a>
+            </h3>
+            <br>
+            <%= link_to "VOLVER", academico_path, :class => 'btn btn-outline-primary margen1' %>
           </div>
+        </div>
       </div>
-      <br>
-      <br>
         <div class="col-md-12 margen2"></div>
         <div class="col-md-4"></div>
         <div class="col-md-4">
