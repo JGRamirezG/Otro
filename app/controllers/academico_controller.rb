@@ -4,8 +4,16 @@ class AcademicoController < ApplicationController
     if params[:search]
       @academicos = Academico.where("nombre like ?", "#{params[:search]}%")
     else
-      @academicos = Academico.all 
+      @academicos = Academico.where("jornada like ?", "JC") 
     end
+  end
+
+  def MJ
+    @academicos = Academico.where("jornada like ?", "MJ")
+  end
+
+  def JP
+    @academicos = Academico.where("jornada like ?", "JP")
   end
 
   def mostrar

@@ -16,6 +16,10 @@ Rails.application.routes.draw do
 
   get 'academico/mostrar/:id', to: 'academico#mostrar'
 
+  get 'academico/MJ/', to: 'academico#MJ'
+
+  get 'academico/JP/', to: 'academico#JP'
+
   get 'academico/:id/editar', to: 'academico#editar', as:'editar_academico'
 
   put 'academico/:id', to: 'academico#update'

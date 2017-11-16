@@ -84,15 +84,11 @@
       <div class="col-md-9">
         <div class="row">
         <%= form_for(@academicos, :url => {:action => :update}) do |f| %>
-          <div class="col-md-3 margen">
-            <img src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
-          </div>
           <div class="col-md-9 margen">
             <h3 class="text-left">
               <%= f.label :nombre %>
               <%= f.text_field :nombre %>
             </h3>
-            <br>
             <h3 class="text-left">
               <%= f.label :grado %>
               <%= f.text_field :grado %>
@@ -139,13 +135,12 @@
             </h3>
             <br>
             <div class="actions">
-              <%= f.submit 'Guardar Cambios' %>
+              <%= f.submit 'Guardar Cambios', :class => 'btn btn-outline-success margen1' %>
             </div>
             <% end %>
             <br>
-            <%= link_to 'atras', academico_path %>
+            <%= link_to 'Volver', academico_path , :class => 'btn btn-outline-primary margen1' %>
             <br>
-            <a href="academicos.html"><button type="button" class="btn btn-outline-primary">volver</button></a>
           </div>
         </div>
       </div>
