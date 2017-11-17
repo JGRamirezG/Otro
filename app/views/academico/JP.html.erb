@@ -5,9 +5,9 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
-    <style type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">    <style type="text/css">
     .centrado{
       display:block;
       margin-left: auto;
@@ -23,9 +23,9 @@
     .margen{
       margin-top: 2em;
     }
-            body {padding: 1.4em;
-      font-family: 'Open Sans', sans-serif;
-    } 
+  body {padding: 1.5em;
+font-family: 'Junge', serif;
+}
         p{
       font-size: 20px;
     }
@@ -35,6 +35,7 @@
     .margen2{
       margin-top: 18em;
     }
+    li {list-style:none;}
     </style>
 </head>
 <body>
@@ -43,7 +44,7 @@
         <div class="col-md-12"></div>
     </div>
     <div class="row">
-        <div class="col-md-5"><img src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
+        <div class="col-md-5"><img width="300" height="70" src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
     </div>
     <div class="row">
       <div class="col-md-12">
@@ -98,11 +99,11 @@
       <div class="col-md-9">
         <div class="row">
           <div class="col-md-12 .hidden-xs-down margen col-sm-12">
-            <h1>Lista de Académicos</h1>
+            <h2>Lista de Académicos</h2>
             <div class="margen">
               <ul>
-              <% @academicos.each do |i|%>
-                <li><p><a href="/academico/mostrar/<%=i.id %>"><%= i.nombre %></a>-><%= link_to "Editar", editar_academico_path(i) %></p></li>
+                <% @academicos.each do |i|%>
+                <li><p><a href="/academico/mostrar/<%=i.id %>"><%=i.apellido %>, <%= i.nombre %></a>-><%= link_to "Editar", editar_academico_path(i) %></p></li>
                 <% end %>
               </ul>
             </div>
