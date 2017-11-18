@@ -1,5 +1,65 @@
 Rails.application.routes.draw do
   
+  get 'iniciodepto/nuevotexto'
+
+  get 'iniciodepto/eliminartexto'
+
+  get 'iniciodepto/nuevopde'
+
+  get 'iniciodepto/eliminarpde'
+
+  get 'iniciodepto/editarinicio'
+
+  get 'iniciodepto/editarhistoria'
+
+  get 'iniciodepto/editarmisionvision'
+
+  get 'iniciodepto/editarpde'
+
+  get 'iniciodepto/index'
+
+  get 'iniciodepto/mostrar'
+
+  get 'iniciodepto/eliminar'
+
+  get 'iniciodepto/update'
+
+  get 'iniciodepto/nuevo'
+
+  get 'iniciodepto/crear'
+
+  get 'iniciodepto/editar'
+
+  get 'iniciodepto/pde'
+
+  get 'iniciodepto/inicio'
+
+  get 'iniciodepto/historia'
+
+  get 'iniciodepto/misionvision'
+
+  get 'inicio/index'
+
+  get 'inicio/mostrar'
+
+  get 'inicio/eliminar'
+
+  get 'inicio/update'
+
+  get 'inicio/nuevo'
+
+  get 'inicio/crear'
+
+  get 'inicio/editar'
+
+  get 'inicio/pde'
+
+  get 'inicio/noticias'
+
+  get 'inicio/historia'
+
+  get 'inicio/misionvision'
+
   get 'tipo_texto/index'
 
   get 'tipo_texto/mostrar'
