@@ -86,68 +86,32 @@ font-family: 'Junge', serif;
       </div>
       <div class="col-md-9">
         <div class="row">
-        <%= form_for(@academicos, :url => {:action => :academicocreate}) do |f| %>
+        <%= form_for(@casillas, :url => {:action => :createcasilla}) do |f| %>
           <div class="col-md-9 margen">
             <h3 class="text-left">
-              <%= f.label :nombre %>
-              <%= f.text_field :nombre %>
+              <p><%= f.label :nombre %></p>
+              <p><%= f.text_field :nombre %></p>
             </h3>
             <br>
             <h3 class="text-left">
-              <%= f.label :apellido %>
-              <%= f.text_field :apellido %>
+              <p><%= f.label :activo %></p>
+              <p><%= f.number_field :activo, {:max=>"1",:min=>"0"}%></p>
             </h3>
             <br>
             <h3 class="text-left">
-              <%= f.label :titulo_profesional %>
-              <%= f.text_field :titulo_profesional %>
+              <p><%= f.label :link %></p>
+              <p><%= f.text_field :link %></p>
+            </h3>
+            <br>
+           <h3 class="text-left">
+              <p><%= f.label :ver %></p>
+              <p><%= f.text_field :ver %></p>
             </h3>
             <br>
             <h3 class="text-left">
-              <%= f.label :grado %>
-              <%= f.text_field :grado %>
+              <p><%= f.label :ubicacion %></p>
+              <p><%= f.text_field :ubicacion %></p>
             </h3>
-            <br>
-            <h3 class="text-left">
-              <%= f.label :area_interes %>
-              <%= f.text_field :area_interes %>
-            </h3>
-            <br>
-            <h3 class="text-left">
-              <%= f.label :correo %>
-              <%= f.text_field :correo %>
-            </h3>
-            <br>
-            <h3 class="text-left">
-              <%= f.label :jornada %>
-              <%= f.select(:jornada, options_for_select([['Jornada Completa','JC'], ['Media Jornada','MJ'], ['Jornada Parcial','JP']])) %>
-            </h3>
-            <br>
-            <h3 class="text-left">
-              <%= f.label :imagen %>
-              <%= f.text_field :imagen %>
-            </h3>
-            <br>
-            <h3 class="text-left">
-              <%= f.label :link1 %>
-              <%= f.text_field :link1 %>
-            </h3>
-            <br>
-            <h3 class="text-left">
-              <%= f.label :link2 %>
-              <%= f.text_field :link2 %>
-            </h3>
-            <br>
-            <h3 class="text-left">
-              <%= f.label :link3 %>
-              <%= f.text_field :link3 %>
-            </h3>
-            <br>
-            <h3 class="text-left">
-              <%= f.label :descripcion %>
-              <%= f.text_area :descripcion %>
-            </h3>
-            <br>
             <div class="actions">
               <%= f.submit 'Guardar', :class => 'btn btn-outline-success margen1' %>
             </div>

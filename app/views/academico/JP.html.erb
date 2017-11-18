@@ -81,11 +81,19 @@ font-family: 'Junge', serif;
         </div>
         <div class="container-fluid margen">
           <div class="list-group">
-            <a href="/academico" class="list-group-item list-group-item-action">
-              Jornada Completa
-            </a>
-            <a href="/academico/MJ" class="list-group-item list-group-item-action">Media Jornada</a>
-            <a href="/academico/JP" class="list-group-item list-group-item-action active">Jornada Parcial</a>
+            <% @casillas.each do |i|%>
+              <% if i.activo ==  1 %>
+                <li>
+                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> -> <span class="badge badge-success">activo</span></a>
+                <%= link_to "Cambiar estado", editar_casilla_path(i) %>
+                </li>
+              <% else %>
+                <li>
+                <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> -> <span class="badge badge-danger">inactivo</span></a>
+                <%= link_to "Cambiar estado", editar_casilla_path(i) %>
+                </li>
+              <% end %>
+            <% end %>
           <%= form_tag academico_path,:class =>'margen' ,:method => :get do %>
 
             <%= text_field_tag :search %>

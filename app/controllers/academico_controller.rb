@@ -4,16 +4,34 @@ class AcademicoController < ApplicationController
     if params[:search]
       @academicos = Academico.where("nombre like ?", "#{params[:search]}%")
     else
-      @academicos = Academico.where("jornada like ?", "JC") 
+      @academicos = Academico.where("id != 1 and jornada like ?", "JC") 
     end
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:id)
+    @casillas.each do |i|   #Redirecciona bien
+      if i.link != "academico"
+        i.link="academico/"+i.link 
+      end
+    end 
   end
 
   def MJ
-    @academicos = Academico.where("jornada like ?", "MJ")
+    @academicos = Academico.where("id != 1 and jornada like ?", "MJ")
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:id)
+      @casillas.each do |i|   #Redirecciona bien
+        if i.link == "academico"
+          i.link="/"+i.link 
+        end
+      end 
   end
 
   def JP
-    @academicos = Academico.where("jornada like ?", "JP")
+    @academicos = Academico.where("id != 1 and jornada like ?", "JP")
+    @casillas = Casilla.where("ubicacion = 'academico'").order(:id)
+      @casillas.each do |i|   #Redirecciona bien
+        if i.link == "academico"
+          i.link="/"+i.link 
+        end
+      end
   end
 
   def mostrar
@@ -27,14 +45,13 @@ class AcademicoController < ApplicationController
   def new
     @academicos = Academico.new
   end
-
-  def create
+  
+  def academicocreate
     @academico = Academico.new(user_params)
     if @academico.save
       redirect_to academico_url
     else
       render action: 'new'
-      
     end
   end
 
@@ -47,8 +64,50 @@ class AcademicoController < ApplicationController
     end
   end
 
+  def eliminar
+    @academicos = Academico.find(params[:id])
+    @academicos.destroy
+    respond_to do |format|
+      format.html {redirect_to academico_url, notice:'fue eliminado'}
+    end  
+  end
+  #------------------------------------------------------------------------
+  #comienzan los controladores de casilla
+  #------------------------------------------------------------------------
+ 
+
+  def ecasilla
+    @casillas = Casilla.find(params[:id])
+    if @casillas.activo == 1
+        @casillas.activo = 0
+    else
+        @casillas.activo=1
+    end 
+    @casillas.save
+    redirect_to academico_url
+  end
+
+
+
+  def newcasilla
+    @casillas = Casilla.new
+  end
+
+  def createcasilla
+    @casillas = Casilla.new(casilla_params)
+    if @casillas.update_attributes(casilla_params)
+      redirect_to academico_url
+    else
+      render action: 'newcasilla'
+    end
+  end
+
   def user_params
     params.require(:academico).permit(:nombre,:apellido,:titulo_profesional,:grado,:area_interes,:correo,:jornada,:imagen,:link1,:link2,:link3,:descripcion) #retorna un hash con todos los valores del academico...
+  end
+
+  def casilla_params
+    params.require(:casilla).permit(:nombre,:activo,:link,:ver,:ubicacion) #retorna un hash con todos los valores del academico...
   end
 
   def set_academico

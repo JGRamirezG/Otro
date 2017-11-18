@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get 'academico/JP/', to: 'academico#JP'
 
+  get 'academico/:id/ecasilla', to: 'academico#ecasilla', as:'editar_casilla'
+
   get 'academico/:id/editar', to: 'academico#editar', as:'editar_academico'
 
   put 'academico/:id', to: 'academico#update'
@@ -28,7 +30,13 @@ Rails.application.routes.draw do
 
   get 'academico/new', to: 'academico#new', as: 'new_academico'
 
-  post 'academico/', to: 'academico#create'
+  get 'academico/newc', to: 'academico#newcasilla', as: 'new_casilla'
+
+  post 'academico/newc', to: 'academico#createcasilla'
+
+  post 'academico/new', to: 'academico#academicocreate'
+
+  delete 'academico/:id', to: 'academico#eliminar', as:'eliminar_academico'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
