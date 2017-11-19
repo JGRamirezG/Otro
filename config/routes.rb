@@ -1,36 +1,67 @@
 Rails.application.routes.draw do
   
-  get 'investigacion/', to: 'investigacion#index'
+feature-portal-rama
+  get 'iniciodepto/nuevotexto'
 
-  get 'investigacion/buscar', to: 'investigacion#buscar', as:'investigacion_buscar'
+  get 'iniciodepto/eliminartexto'
 
-  get 'investigacion/ADI', to: 'investigacion#ADI', as:'investigacion_adi'
+  get 'iniciodepto/nuevopde'
 
-  get 'investigacion/ADI/new', to: 'investigacion#new', as:'new_area'
+  get 'iniciodepto/eliminarpde'
 
-  post 'investigacion/ADI/new', to: 'investigacion#createa'
+  get 'iniciodepto/editarinicio'
 
-  get 'investigacion/ver/:id', to: 'investigacion#ver'
+  get 'iniciodepto/editarhistoria'
 
-  get 'investigacion/ADI/:id/editar', to: 'investigacion#editar', as:'editar_area'
+  get 'iniciodepto/editarmisionvision'
 
-  put 'investigacion/ADI/:id', to: 'investigacion#update'
+  get 'iniciodepto/editarpde'
 
-  patch 'investigacion/ADI/:id', to: 'investigacion#update'
+  get 'iniciodepto/index'
 
-  #-----------------comienzan los proyectos --------------------------------
+  get 'iniciodepto/mostrar'
 
-  get 'investigacion/PRO', to: 'investigacion#pro', as:'investigacion_pro'
+  get 'iniciodepto/eliminar'
 
-  get 'investigacion/PRO/newp', to: 'investigacion#newp', as:'new_proyecto'
+  get 'iniciodepto/update'
 
-  post 'investigacion/PRO/newp', to: 'investigacion#createp'
+  get 'iniciodepto/nuevo'
 
-  get 'investigacion/PRO/newr', to: 'investigacion#newr', as:'new_relacion'
+  get 'iniciodepto/crear'
 
-  post 'investigacion/PRO/newr', to: 'investigacion#creater'
+  get 'iniciodepto/editar'
 
-  #------------------terminan los proyectos-----------------------------
+  get 'iniciodepto/pde'
+
+  get 'iniciodepto/inicio'
+
+  get 'iniciodepto/historia'
+
+  get 'iniciodepto/misionvision'
+
+  get 'inicio/index'
+
+  get 'inicio/mostrar'
+
+  get 'inicio/eliminar'
+
+  get 'inicio/update'
+
+  get 'inicio/nuevo'
+
+  get 'inicio/crear'
+
+  get 'inicio/editar'
+
+  get 'inicio/pde'
+
+  get 'inicio/noticias'
+
+  get 'inicio/historia'
+
+  get 'inicio/misionvision'
+  
+master
 
   get 'tipo_texto/index'
 
