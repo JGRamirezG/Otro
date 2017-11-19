@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-feature-portal-rama
   get 'iniciodepto/nuevotexto'
 
   get 'iniciodepto/eliminartexto'
@@ -60,8 +59,40 @@ feature-portal-rama
   get 'inicio/historia'
 
   get 'inicio/misionvision'
+
+  #-----------------------------comienza investigacion inicio ---------------------
   
-master
+  get 'investigacion/', to: 'investigacion#index'
+
+  get 'investigacion/buscar', to: 'investigacion#buscar', as:'investigacion_buscar'
+
+  get 'investigacion/ADI', to: 'investigacion#ADI', as:'investigacion_adi'
+
+  get 'investigacion/ADI/new', to: 'investigacion#new', as:'new_area'
+
+  post 'investigacion/ADI/new', to: 'investigacion#createa'
+
+  get 'investigacion/ver/:id', to: 'investigacion#ver'
+
+  get 'investigacion/ADI/:id/editar', to: 'investigacion#editar', as:'editar_area'
+
+  put 'investigacion/ADI/:id', to: 'investigacion#update'
+
+  patch 'investigacion/ADI/:id', to: 'investigacion#update'
+
+  #-----------------comienzan los proyectos --------------------------------
+
+  get 'investigacion/PRO', to: 'investigacion#pro', as:'investigacion_pro'
+
+  get 'investigacion/PRO/newp', to: 'investigacion#newp', as:'new_proyecto'
+
+  post 'investigacion/PRO/newp', to: 'investigacion#createp'
+
+  get 'investigacion/PRO/newr', to: 'investigacion#newr', as:'new_relacion'
+
+  post 'investigacion/PRO/newr', to: 'investigacion#creater'
+
+  #------------------terminan los proyectos-----------------------------
 
   get 'tipo_texto/index'
 
