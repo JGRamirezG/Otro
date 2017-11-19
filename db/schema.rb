@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171119010536) do
+=======
+ActiveRecord::Schema.define(version: 20171118183658) do
+>>>>>>> dbc1b1ba91976d23d99f2ac57a6647a3bf0a2ae4
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,11 +44,42 @@ ActiveRecord::Schema.define(version: 20171119010536) do
     t.string "titulo_profesional"
   end
 
+<<<<<<< HEAD
   create_table "academicos_proyectos", id: false, force: :cascade do |t|
     t.bigint "academico_id", null: false
     t.bigint "proyecto_id", null: false
     t.index ["academico_id", "proyecto_id"], name: "index_academicos_proyectos_on_academico_id_and_proyecto_id"
     t.index ["proyecto_id", "academico_id"], name: "index_academicos_proyectos_on_proyecto_id_and_academico_id"
+=======
+  create_table "admin_deptos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "apellido"
+    t.string "cargo"
+    t.string "correo"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "admin_escuelas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "apellido"
+    t.string "cargo"
+    t.string "correo"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "admin_generals", force: :cascade do |t|
+    t.string "nombre"
+    t.string "apellido"
+    t.string "cargo"
+    t.string "correo"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> dbc1b1ba91976d23d99f2ac57a6647a3bf0a2ae4
   end
 
   create_table "areas_disciplinaria", force: :cascade do |t|
