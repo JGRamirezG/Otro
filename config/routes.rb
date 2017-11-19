@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+feature-portal-rama
   get 'iniciodepto/nuevotexto'
 
   get 'iniciodepto/eliminartexto'
@@ -59,6 +60,8 @@ Rails.application.routes.draw do
   get 'inicio/historia'
 
   get 'inicio/misionvision'
+  
+master
 
   get 'tipo_texto/index'
 
