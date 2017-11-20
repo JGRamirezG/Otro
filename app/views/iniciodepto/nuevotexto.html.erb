@@ -87,11 +87,11 @@
     </div>
     <div class="col-md-9">
       <div class="row">
-        <%= form_for(@textos, :url => {:action => :textocreate}) do |f| %>
+        <%= form_for(@texto, :url => {:action => :textocreate})  do |f| %>
             <div class="col-md-9 margen">
               <h3 class="text-left">
                 <%= f.label :nombre %>
-                <%= f.text_field :nombre %>
+                <%= f.select(:nombre, options_for_select([['Inicio','Inicio'], ['Historia','Historia'], ['Mision/Vision','Mision/Vision'], ['PDE','PDE']])) %>
               </h3>
               <br>
               <h3 class="text-left">
@@ -114,7 +114,7 @@
               </div>
         <% end %>
         <br>
-        <%= link_to 'Volver', texto_path, :class => 'btn btn-outline-primary margen1' %>
+        <%= link_to 'Volver', inicio_nuevo_path, :class => 'btn btn-outline-primary margen1' %>
         <br>
         </div>
       </div>

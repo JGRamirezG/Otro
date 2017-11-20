@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
-  get 'iniciodepto/nuevotexto'
+  get 'iniciodepto/nuevotexto', to: 'iniciodepto#nuevotexto', as:'iniciodepto_nuevotexto'
+
+  post 'iniciodepto/nuevotexto', to: 'iniciodepto#textocreate'
 
   get 'iniciodepto/eliminartexto'
 
@@ -30,13 +32,13 @@ Rails.application.routes.draw do
 
   get 'iniciodepto/editar'
 
-  get 'iniciodepto/pde'
+  get 'iniciodepto/pde', to: 'iniciodepto#pde', as: 'iniciodepto_pde'
 
-  get 'iniciodepto/inicio'
+  get 'iniciodepto/inicio', to: 'iniciodepto#inicio', as: 'iniciodepto_inicio'
 
-  get 'iniciodepto/historia'
+  get 'iniciodepto/historia', to: 'iniciodepto#historia', as: 'iniciodepto_historia'
 
-  get 'iniciodepto/misionvision'
+  get 'iniciodepto/misionvision', to: 'iniciodepto#misionvision', as: 'iniciodepto_misionvision'
 
   get 'inicio/index'
 
