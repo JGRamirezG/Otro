@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,7 +6,9 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"> 
     <style type="text/css">
     .centrado{
       display:block;
@@ -28,6 +31,9 @@
     .margen2{
       margin-top: 18em;
     }
+     body {padding: 1.5em;
+font-family: 'Junge', serif;
+}
     </style>
 </head>
 <body>
@@ -43,20 +49,20 @@
         <div class="container-fluid">
             <br>
             <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
-                <li class="nav-item" href="/inicio.html">
-                    <a class="nav-link" href="departamento.html" style="color: #ffffff;">Inicio</a>
+                <li class="nav-item" href="/inicio">
+                    <a class="nav-link" href="/departamento" style="color: #ffffff;">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="academicos.html"  style="color: #ffffff;">Académicos</a>
+                    <a class="nav-link active" href="/academicos"  style="color: #ffffff;">Académicos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="investigacion.html"  style="color: #ffffff;">Investigación</a>
+                    <a class="nav-link" href="/investigacion"  style="color: #ffffff;">Investigación</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="organizacion.html"  style="color: #ffffff;">Organización</a>
+                    <a class="nav-link" href="/organizacion"  style="color: #ffffff;">Organización</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contacto.html"  style="color: #ffffff;">Contacto</a>
+                    <a class="nav-link" href="/contactod"  style="color: #ffffff;">Contacto</a>
                 </li>
             </ul>
           </div>
@@ -71,56 +77,40 @@
           </ol>
           <hr>
         </div>
-        <div class="container-fluid margen">
-          <div class="list-group">
-            <a href="#" class="list-group-item active">
-              Jornada Completa
-            </a>
-            <a href="departamento/mjornada.html" class="list-group-item list-group-item-action">Media Jornada</a>
-            <a href="#" class="list-group-item list-group-item-action">Jornada Parcial</a>
-          </div>
-        </div>
+
       </div>
-      <div class="col-md-9">
-        <div class="row">
-          <div class="col-md-2 margen3 col-sm-12">
-            <img width="130" height="130" class="rounded-circle mx-auto d-block" src="<%= @academicos.imagen %>">
-          </div>
-          <div class="col-md-10 margen col-sm-12">
-            <h3 class="text-left margen">
-              <%= @academicos.nombre %>
-            </h3>
-            <br>
-            <h3><%= @academicos.grado %></h3>
-            <br>
-            <h3 class="text-left">
-              <%= @academicos.area_interes %>.
-            </h3>
-            <br>
-            <h3 class="text-left">
-              <%= @academicos.correo %>
-            </h3>
-            <div class="row">
-              <div class="col-md-1"><img src="https://image.flaticon.com/icons/svg/174/174848.svg" class="img-fluid flot-left" width="40" height="40"></div>
-              <div class="col-md-1"><img src="https://image.flaticon.com/icons/svg/174/174857.svg" class="img-fluid flot-left" width="40" height="40"></div>
-              <div class="col-md-1"><img src="https://image.flaticon.com/icons/svg/174/174876.svg" class="img-fluid flot-left" width="40" height="40"></div>
-            </div>
-            <br>
-            <h3 class="text-left">
-              Horario de atención:
-              <ul>
-              <li>Lunes      18:00 hrs.</li>
-              <li>Martes     15:30 hrs.</li>
-              </ul>
-            </h3>
-            <br>
-            <h3 class="text-left">
-              <a href="cv.pdf">Curriculum Vitae</a>
-            </h3>
-            <br>
-            <%= link_to "VOLVER", academico_path, :class => 'btn btn-outline-primary margen1' %>
-          </div>
-        </div>
+      <div class="col-md-9 margen">
+      <table class="table table-bordered margen table-responsive">
+          <tbody>
+            <tr>
+                <td rowspan="4"><img width="130" height="160" class="rounded-circle mx-auto d-block" src=""<%= @academicos.imagen %>""></td>
+                <td><%= @academicos.titulo_profesional %>
+                </td>
+            </tr>
+            <tr>
+                <td><%= @academicos.grado %></td>
+            </tr>
+            <tr>
+              <td><%= @academicos.area_interes %></td>
+            </tr>
+            <tr>
+              <td><%= @academicos.correo %></td>
+            </tr>
+            <tr >
+              <td class="text-center"><%= @academicos.apellido %>, <%= @academicos.nombre %></td>
+                      <th><a href="<%= @academicos.link1 %>"><img src="https://image.flaticon.com/icons/svg/174/174848.svg" class="img-fluid flot-left" width="30" height="30"></a><a href="<%= @academicos.link2 %>"><img src="https://image.flaticon.com/icons/svg/174/174857.svg" class="img-fluid flot-left" width="30" height="30"></a><a href="<%= @academicos.link3 %>"><img src="https://image.flaticon.com/icons/svg/174/174876.svg" class="img-fluid flot-left" width="30" height="30"></a></th>
+            </tr>
+            <tr>
+              <td></td>
+              <td><%= @academicos.descripcion %></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a href="<%= @academicos.curriculum %>">Curriculum Vitae</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <%= link_to "VOLVER", academico_path, :class => 'btn btn-outline-primary margen1' %>
       </div>
         <div class="col-md-12 margen2"></div>
         <div class="col-md-4"></div>

@@ -5,7 +5,9 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    <link href="https://fonts.googleapis.com/css?family=Junge" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
     <style type="text/css">
     .centrado{
       display:block;
@@ -25,6 +27,10 @@
     .margen2{
       margin-top: 18em;
     }
+     body {padding: 1.5em;
+font-family: 'Junge', serif;
+}
+  
     </style>
 </head>
 <body>
@@ -33,30 +39,27 @@
         <div class="col-md-12"></div>
     </div>
     <div class="row">
-        <div class="col-md-5"><img src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
+        <div class="col-md-5"><img width="300" height="70" src="http://uestatales.cl/cue/sites/default/files/publicaciones/utem_imagotipoPNG.png" class="img-fluid"></div>
     </div>
     <div class="row">
       <div class="col-md-12">
         <div class="container-fluid">
             <br>
             <ul class="nav nav-pills nav-fill" style="background-color: #044f8e;">
-                <li class="nav-item" href="/inicio.html">
-                    <a class="nav-link" href="../escuela.html" style="color: #ffffff;">Inicio</a>
+                <li class="nav-item" href="/inicio">
+                    <a class="nav-link" href="/departamento" style="color: #ffffff;">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="academicos.html"  style="color: #ffffff;">Académicos</a>
+                    <a class="nav-link active" href="/academicos"  style="color: #ffffff;">Académicos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="estudiantes.html"  style="color: #ffffff;">Estudiantes</a>
+                    <a class="nav-link" href="/investigacion"  style="color: #ffffff;">Investigación</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="egresados.html"  style="color: #ffffff;">Egresados</a>
+                    <a class="nav-link" href="/organizacion"  style="color: #ffffff;">Organización</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="laboral.html"  style="color: #ffffff;">Laboral</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contacto.html"  style="color: #ffffff;">Contacto</a>
+                    <a class="nav-link" href="/contactod"  style="color: #ffffff;">Contacto</a>
                 </li>
             </ul>
           </div>
@@ -73,24 +76,31 @@
         </div>
         <div class="container-fluid margen">
           <div class="list-group">
-            <a href="#" class="list-group-item active">
+            <a href="/academico/" class="list-group-item active">
               Jornada Completa
             </a>
-            <a href="departamento/mjornada.html" class="list-group-item list-group-item-action">Media Jornada</a>
-            <a href="#" class="list-group-item list-group-item-action">Jornada Parcial</a>
+            <a href="/academico/MJ" class="list-group-item list-group-item-action">Media Jornada</a>
+            <a href="/academico/JP" class="list-group-item list-group-item-action">Jornada Parcial</a>
           </div>
         </div>
       </div>
       <div class="col-md-9">
         <div class="row">
         <%= form_for(@academicos, :url => {:action => :update}) do |f| %>
-          <div class="col-md-3 margen">
-            <img src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
-          </div>
           <div class="col-md-9 margen">
             <h3 class="text-left">
               <%= f.label :nombre %>
               <%= f.text_field :nombre %>
+            </h3>
+            <br>
+            <h3 class="text-left">
+              <%= f.label :apellido %>
+              <%= f.text_field :apellido %>
+            </h3>
+            <br>
+            <h3 class="text-left">
+              <%= f.label :titulo_profesional %>
+              <%= f.text_field :titulo_profesional %>
             </h3>
             <br>
             <h3 class="text-left">
@@ -110,10 +120,10 @@
             <br>
             <h3 class="text-left">
               <%= f.label :jornada %>
-              <%= f.text_field :jornada %>
+              <%= f.select(:jornada, options_for_select([['Jornada Completa','JC'], ['Media Jornada','MJ'], ['Jornada Parcial','JP']])) %>
             </h3>
             <br>
-                        <h3 class="text-left">
+            <h3 class="text-left">
               <%= f.label :imagen %>
               <%= f.text_field :imagen %>
             </h3>
@@ -139,13 +149,12 @@
             </h3>
             <br>
             <div class="actions">
-              <%= f.submit 'Guardar Cambios' %>
+              <%= f.submit 'Guardar Cambios', :class => 'btn btn-outline-success margen1' %>
             </div>
             <% end %>
             <br>
-            <%= link_to 'atras', academico_path %>
+            <%= link_to 'Volver', academico_path , :class => 'btn btn-outline-primary margen1' %>
             <br>
-            <a href="academicos.html"><button type="button" class="btn btn-outline-primary">volver</button></a>
           </div>
         </div>
       </div>

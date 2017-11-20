@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115160442) do
+ActiveRecord::Schema.define(version: 20171119010536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "academico_proyectos", force: :cascade do |t|
+    t.integer "academico_id"
+    t.integer "proyecto_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "academicos", force: :cascade do |t|
     t.string "nombre"
@@ -29,6 +36,45 @@ ActiveRecord::Schema.define(version: 20171115160442) do
     t.datetime "updated_at", null: false
     t.string "jornada"
     t.string "imagen"
+    t.string "apellido"
+    t.string "titulo_profesional"
+  end
+
+  create_table "academicos_proyectos", id: false, force: :cascade do |t|
+    t.bigint "academico_id", null: false
+    t.bigint "proyecto_id", null: false
+    t.index ["academico_id", "proyecto_id"], name: "index_academicos_proyectos_on_academico_id_and_proyecto_id"
+    t.index ["proyecto_id", "academico_id"], name: "index_academicos_proyectos_on_proyecto_id_and_academico_id"
+  end
+
+  create_table "admin_deptos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "apellido"
+    t.string "cargo"
+    t.string "correo"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "admin_escuelas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "apellido"
+    t.string "cargo"
+    t.string "correo"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "admin_generals", force: :cascade do |t|
+    t.string "nombre"
+    t.string "apellido"
+    t.string "cargo"
+    t.string "correo"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "areas_disciplinaria", force: :cascade do |t|
@@ -42,6 +88,16 @@ ActiveRecord::Schema.define(version: 20171115160442) do
 
   create_table "areas_disciplinarias_academicos", force: :cascade do |t|
     t.string "cargo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "casillas", force: :cascade do |t|
+    t.string "nombre"
+    t.integer "activo"
+    t.string "link"
+    t.integer "ver"
+    t.string "ubicacion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -254,4 +310,6 @@ ActiveRecord::Schema.define(version: 20171115160442) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "academicos_proyectos", "academicos"
+  add_foreign_key "academicos_proyectos", "proyectos"
 end
