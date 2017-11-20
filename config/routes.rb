@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
   
+#------------- comeinza organizacion --------
+
+  get 'organizacion/', to:"organizacion#index"
+
+  get 'organizacion/new'
+
+  get 'organizacion/delete'
+
+  get 'organizacion/update'
+
+  get 'organizacion/editar'
+
+#--------------termina organizacion---------------
+
   get 'iniciodepto/nuevotexto'
 
   get 'iniciodepto/eliminartexto'
