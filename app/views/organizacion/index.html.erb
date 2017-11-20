@@ -91,7 +91,7 @@ font-family: 'Junge', serif;
               <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
               <br>
               <br>
-              <h4 class="text-left"><%= i.cargo%></h4>
+              <h4 class="text-left"><%= i.cargo %></h4>
               <h4 class="text-left lead">Nombre: <%= i.nombre %></h4>
               <h4 class="text-left lead">Correo: <%= i.correo %></h4>
               <br>
@@ -105,124 +105,38 @@ font-family: 'Junge', serif;
       <div class="col-md-9">
           <div class="container margen">
             <h2>Grupos de apoyo</h2>
+            <% @funcionario_deptos.each do |i| %>
             <hr>
               <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
               <br>
               <br>
-              <h4 class="text-left">Cargo 1</h4>
-              <h4 class="text-left lead">Nombre:</h4>
-              <h4 class="text-left lead">Correo:</h4>
+              <h4 class="text-left"><%= i.cargo%></h4>
+              <h4 class="text-left lead">Nombre: <%= i.nombre %></h4>
+              <h4 class="text-left lead">Correo: <%= i.correo %></h4>
               <br>
               <br>
               <br>
             <hr>
-          </div>
-      </div>
-      <div class="col-md-3"></div>
-      <div class="col-md-9">
-          <div class="container">
-              <img class="rounded-circle" align="left" width="130" height="130" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
-              <br>
-              <br>
-              <h4 class="text-left">Cargo 2</h4>
-              <h4 class="text-left lead">Nombre:</h4>
-              <h4 class="text-left lead">Correo:</h4>
-              <br>
-              <br>
-              <br>
-            <hr>
-          </div>
-      </div>
-      <div class="col-md-3"></div>
-      <div class="col-md-9">
-          <div class="container">
-              <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
-              <br>
-              <br>
-              <h4 class="text-left">Cargo 3</h4>
-              <h4 class="text-left lead">Nombre:</h4>
-              <h4 class="text-left lead">Correo:</h4>
-              <br>
-              <br>
-              <br>
-            <hr>
-          </div>
-      </div>
-      <div class="col-md-3"></div>
-      <div class="col-md-9">
-          <div class="container">
-              <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
-              <br>
-              <br>
-              <h4 class="text-left">Cargo 4</h4>
-              <h4 class="text-left lead">Nombre:</h4>
-              <h4 class="text-left lead">Correo:</h4>
-              <br>
-              <br>
-              <br>
-            <hr>
+            <% end %>
           </div>
       </div>
       <div class="col-md-3"></div>
       <div class="col-md-9">
           <div class="container margen">
             <h2>Académicos</h2>
+            <% @funcionario_deptos.each do |i| %>
             <hr>
               <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
               <br>
               <br>
-              <h4 class="text-left">Grupo 1</h4>
-              <h4 class="text-left lead">Nombre:</h4>
-              <h4 class="text-left lead">Correo:</h4>
+              <h4 class="text-left"><%= i.cargo%></h4>
+              <h4 class="text-left lead">Nombre: <%= i.nombre %></h4>
+              <h4 class="text-left lead">Correo: <%= i.correo %></h4>
               <br>
               <br>
               <br>
             <hr>
-          </div>
-      </div>
-      <div class="col-md-3"></div>
-      <div class="col-md-9">
-          <div class="container">
-              <img class="rounded-circle" align="left" width="130" height="130" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
-              <br>
-              <br>
-              <h4 class="text-left">Grupo 2</h4>
-              <h4 class="text-left lead">Nombre:</h4>
-              <h4 class="text-left lead">Correo:</h4>
-              <br>
-              <br>
-              <br>
-            <hr>
-          </div>
-      </div>
-      <div class="col-md-3"></div>
-      <div class="col-md-9">
-          <div class="container">
-              <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
-              <br>
-              <br>
-              <h4 class="text-left">Grupo 3</h4>
-              <h4 class="text-left lead">Nombre:</h4>
-              <h4 class="text-left lead">Correo:</h4>
-              <br>
-              <br>
-              <br>
-            <hr>
-          </div>
-      </div>
-      <div class="col-md-3"></div>
-      <div class="col-md-9">
-          <div class="container">
-              <img class="rounded-circle" width="130" height="130" align="left" src="http://evonexus.org/wp-content/uploads/2013/12/dummy-200x200.png">
-              <br>
-              <br>
-              <h4 class="text-left">Grupo 4</h4>
-              <h4 class="text-left lead">Nombre:</h4>
-              <h4 class="text-left lead">Correo:</h4>
-              <br>
-              <br>
-              <br>
-            <hr>
+            <% end %>
           </div>
       </div>
       <br>
@@ -245,5 +159,4 @@ font-family: 'Junge', serif;
     </div>
 </body>
 </div>
-</html><h1>Organizacion#index</h1>
-<p>Find me in app/views/organizacion/index.html.erb</p>
+</html>

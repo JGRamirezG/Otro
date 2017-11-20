@@ -1,20 +1,8 @@
 Rails.application.routes.draw do
   
-#------------- comeinza organizacion --------
+  get 'iniciodepto/nuevotexto', to: 'iniciodepto#nuevotexto', as:'iniciodepto_nuevotexto'
 
-  get 'organizacion/', to:"organizacion#index"
-
-  get 'organizacion/new'
-
-  get 'organizacion/delete'
-
-  get 'organizacion/update'
-
-  get 'organizacion/editar'
-
-#--------------termina organizacion---------------
-
-  get 'iniciodepto/nuevotexto'
+  post 'iniciodepto/nuevotexto', to: 'iniciodepto#textocreate'
 
   get 'iniciodepto/eliminartexto'
 
@@ -44,13 +32,13 @@ Rails.application.routes.draw do
 
   get 'iniciodepto/editar'
 
-  get 'iniciodepto/pde'
+  get 'iniciodepto/pde', to: 'iniciodepto#pde', as: 'iniciodepto_pde'
 
-  get 'iniciodepto/inicio'
+  get 'iniciodepto/inicio', to: 'iniciodepto#inicio', as: 'iniciodepto_inicio'
 
-  get 'iniciodepto/historia'
+  get 'iniciodepto/historia', to: 'iniciodepto#historia', as: 'iniciodepto_historia'
 
-  get 'iniciodepto/misionvision'
+  get 'iniciodepto/misionvision', to: 'iniciodepto#misionvision', as: 'iniciodepto_misionvision'
 
   get 'inicio/index'
 
@@ -73,6 +61,9 @@ Rails.application.routes.draw do
   get 'inicio/historia'
 
   get 'inicio/misionvision'
+  #--------------------comienza organizacion------------------------------
+
+  get 'organizacion/', to: 'organizacion#index'
 
   #-----------------------------comienza investigacion inicio ---------------------
   

@@ -87,7 +87,7 @@
     </div>
     <div class="col-md-9">
       <div class="row">
-        <%= form_for(@textos, :url => {:action => :textocreate}) do |f| %>
+        <%= form_for(@textos, :url => {:action => :textocreate})  do |f| %>
             <div class="col-md-9 margen">
               <h3 class="text-left">
                 <%= f.label :nombre %>
@@ -114,7 +114,7 @@
               </div>
         <% end %>
         <br>
-        <%= link_to 'Volver', texto_path, :class => 'btn btn-outline-primary margen1' %>
+        <%= link_to 'Volver', inicio_nuevo_path, :class => 'btn btn-outline-primary margen1' %>
         <br>
         </div>
       </div>
