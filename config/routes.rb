@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+
   get 'iniciodepto/nuevotexto', to: 'iniciodepto#nuevotexto', as:'iniciodepto_nuevotexto'
 
   post 'iniciodepto/nuevotexto', to: 'iniciodepto#textocreate'
@@ -85,6 +86,8 @@ Rails.application.routes.draw do
 
   patch 'investigacion/ADI/:id', to: 'investigacion#update'
 
+  delete 'investigacion/ADI/:id', to: 'investigacion#eliminar', as:'eliminar_area'
+
   #-----------------comienzan los proyectos --------------------------------
 
   get 'investigacion/PRO', to: 'investigacion#pro', as:'investigacion_pro'
@@ -96,6 +99,8 @@ Rails.application.routes.draw do
   get 'investigacion/PRO/newr', to: 'investigacion#newr', as:'new_relacion'
 
   post 'investigacion/PRO/newr', to: 'investigacion#creater'
+
+  delete 'investigacion/PRO/:id', to: 'investigacion#eliminarp', as:'eliminar_proyecto'
 
   #------------------terminan los proyectos-----------------------------
 
@@ -111,6 +116,8 @@ Rails.application.routes.draw do
 
   get 'tipo_texto/update'
 
+  #-----------------------comienza academicos------------------------------
+
   get 'academico/', to: 'academico#index', as:'academico'
 
   get 'academico/mostrar/:id', to: 'academico#mostrar'
@@ -120,6 +127,8 @@ Rails.application.routes.draw do
   get 'academico/JP/', to: 'academico#JP'
 
   get 'academico/:id/ecasilla', to: 'academico#ecasilla', as:'editar_casilla'
+
+  delete 'academico/:id', to: 'academico#eliminarc', as:'eliminar_casilla'
 
   get 'academico/:id/editar', to: 'academico#editar', as:'editar_academico'
 
@@ -136,6 +145,7 @@ Rails.application.routes.draw do
   post 'academico/new', to: 'academico#academicocreate'
 
   delete 'academico/:id', to: 'academico#eliminar', as:'eliminar_academico'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

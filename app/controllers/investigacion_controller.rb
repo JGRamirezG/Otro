@@ -15,10 +15,11 @@ class InvestigacionController < ApplicationController
   def new
   	@areas_disciplinarias = AreasDisciplinaria.new
   end
+
   def createa
     @areas_disciplinarias = AreasDisciplinaria.new(area_params)
     if @areas_disciplinarias.save
-      redirect_to investigacion_url
+      redirect_to investigacion_adi_path
     else
       render action: 'new'
     end
@@ -40,11 +41,19 @@ class InvestigacionController < ApplicationController
       render action: 'editar'
     end
   end
+
+  def eliminar
+    @areas_disciplinarias = AreasDisciplinaria.find(params[:id])
+    @areas_disciplinarias.destroy
+    respond_to do |format|
+      format.html {redirect_to investigacion_adi_url, notice:'fue eliminado'}
+    end  
+  end
    #---------------------comienza el area de proyectos-----------------------------
 
    def pro
    	@proyectos = Proyecto.all
-   	@proyectos_academicos = Academico.joins(:academicos_proyectos,:proyectos).where("proyectos.id = 1")
+   	@proyectos_academicos = Academico.joins(:academicos_proyectos,:proyectos).where("proyectos.id = 1") #solucionar problema!
    end
 
    def newp
@@ -59,6 +68,14 @@ class InvestigacionController < ApplicationController
       render action: 'newp'
     end
    end
+
+   def eliminarp
+    @proyectos = Proyecto.find(params[:id])
+    @proyectos.destroy
+    respond_to do |format|
+      format.html {redirect_to investigacion_pro_url, notice:'fue eliminado'}
+    end  
+  end
 
   #def newr
   #	@academicos_proyectos = AcademicoProyecto.new

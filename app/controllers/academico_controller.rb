@@ -102,6 +102,14 @@ class AcademicoController < ApplicationController
     end
   end
 
+  def eliminarc
+    @casillas = Casilla.find(params[:id])
+    @casillas.destroy
+    respond_to do |format|
+      format.html {redirect_to academico_url, notice:'fue eliminado'}
+    end  
+  end
+
   def user_params
     params.require(:academico).permit(:nombre,:apellido,:titulo_profesional,:grado,:area_interes,:correo,:jornada,:imagen,:link1,:link2,:link3,:descripcion) #retorna un hash con todos los valores del academico...
   end
