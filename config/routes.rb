@@ -69,9 +69,15 @@ Rails.application.routes.draw do
   get 'inicioe/nuevotexto', to: 'inicioe#nuevotexto', as: 'inicioe_nuevotexto'
 
   post 'inicioe/nuevotexto', to: 'inicioe#textocreate'
+  
+  #-------------------------comienza contacto---------------------
 
+  get 'contactod/', to:'contactod#index', as:'contacto'
 
-#---------------------------------------------
+  post 'contactod/', to:'contactod#crear'
+
+  #--------------------------termina contato----------------------
+
   get 'iniciodepto/nuevotexto', to: 'iniciodepto#nuevotexto', as:'iniciodepto_nuevotexto'
 
   post 'iniciodepto/nuevotexto', to: 'iniciodepto#textocreate'
@@ -151,7 +157,19 @@ Rails.application.routes.draw do
   get 'inicio/misionvision'
   #--------------------comienza organizacion------------------------------
 
-  get 'organizacion/', to: 'organizacion#index'
+  get 'organizacion/', to: 'organizacion#index', as:'organizacion'
+
+  get 'organizacion/new', to:'organizacion#new', as:'new_funcionario'
+
+  post 'organizacion/new', to:'organizacion#crear'
+
+  get'organizacion/:id/editar', to:'organizacion#editar', as:'editar_funcionario'
+
+  put 'organizacion/:id', to:'organizacion#update'
+
+  patch 'organizacion/:id', to:'organizacion#update'
+
+  delete 'organizacion/:id', to: 'organizacion#eliminar', as:'eliminar_organizacion'
 
   #-----------------------------comienza investigacion inicio ---------------------
   
@@ -215,7 +233,7 @@ Rails.application.routes.draw do
 
   get 'academico/:id/ecasilla', to: 'academico#ecasilla', as:'editar_casilla'
 
-  delete 'academico/:id', to: 'academico#eliminarc', as:'eliminar_casilla'
+  delete 'academico/:id/ecasilla', to: 'academico#eliminarc', as:'eliminar_casilla'
 
   get 'academico/:id/editar', to: 'academico#editar', as:'editar_academico'
 
@@ -233,6 +251,6 @@ Rails.application.routes.draw do
 
   delete 'academico/:id', to: 'academico#eliminar', as:'eliminar_academico'
 
-
+  #Falta toda escual y contacto...
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

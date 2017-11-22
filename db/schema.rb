@@ -178,6 +178,7 @@ ActiveRecord::Schema.define(version: 20171122003646) do
     t.string "imagen"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "funcion"
   end
 
   create_table "funcionario_escuelas", force: :cascade do |t|

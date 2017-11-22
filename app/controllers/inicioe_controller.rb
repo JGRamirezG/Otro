@@ -4,7 +4,7 @@ class InicioeController < ApplicationController
   end
 
   def editarinicio
-    @etextos = Etexto.where("id != 1 and nombre like ?", "inicio").first
+    @etextos = Etexto.where("id != 1 nombre like ?", "inicio").first
   end
 
   def editarmisionvision
