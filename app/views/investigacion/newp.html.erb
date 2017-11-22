@@ -99,13 +99,13 @@ font-family: 'Junge', serif;
       <%= form_for(@proyectos, :url => {:action => :createp}) do |f| %>
           <div class="col-md-9 margen">
             <h3 class="text-left">
-                <%= f.label :nombre %>
-                <%= f.text_field :nombre %>
+                <%= f.label :nombre_del_proyecto %>
+                <%= f.cktext_area :nombre %>
             </h3>
             <br>
            <h3 class="text-left">
-                <%= f.label :descripcion %>
-                <%= f.text_area :descripcion %>
+                <%= f.label :descripcion_del_proyecto %>
+                <%= f.cktext_area :descripcion %>
             </h3>
             <br>
             <div class="actions">

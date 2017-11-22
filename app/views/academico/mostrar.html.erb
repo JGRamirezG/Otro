@@ -91,7 +91,7 @@ font-family: 'Junge', serif;
                 <td><%= @academicos.grado %></td>
             </tr>
             <tr>
-              <td><%= @academicos.area_interes %></td>
+              <td><%= raw @academicos.area_interes %></td>
             </tr>
             <tr>
               <td><%= @academicos.correo %></td>
@@ -102,7 +102,7 @@ font-family: 'Junge', serif;
             </tr>
             <tr>
               <td></td>
-              <td><%= @academicos.descripcion %></td>
+              <td><%=  raw @academicos.descripcion %></td>
             </tr>
             <tr>
               <td></td>

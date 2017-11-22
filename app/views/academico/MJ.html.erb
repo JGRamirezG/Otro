@@ -86,6 +86,7 @@ font-family: 'Junge', serif;
                 <li>
                 <a href="<%= i.link %>" class="list-group-item "><%= i.nombre %> -> <span class="badge badge-success">activo</span></a>
                 <%= link_to "Cambiar estado", editar_casilla_path(i) %>
+                <%= link_to "Eliminar", eliminar_casilla_path(i) , method: :delete, data: {confirm: "Se eliminará #{i.nombre}, seguro?"} %>
                 </li>
               <% else %>
                 <li>
@@ -111,7 +112,7 @@ font-family: 'Junge', serif;
             <div class="margen">
               <ul>
                 <% @academicos.each do |i|%>
-                <li><p><a href="/academico/mostrar/<%=i.id %>"><%=i.apellido %>, <%= i.nombre %></a>-><%= link_to "Editar", editar_academico_path(i) %></p></li>
+                <li><p><a href="/academico/mostrar/<%=i.id %>"><%=i.apellido %>, <%= i.nombre %></a>-><%= link_to "Editar", editar_academico_path(i) %>-><%= link_to "Eliminar", eliminar_academico_path(i) , method: :delete, data: {confirm: "Se eliminará a #{i.nombre}, seguro?"} %></p></li>
                 <% end %>
               </ul>
             </div>
